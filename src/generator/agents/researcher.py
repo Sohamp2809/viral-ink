@@ -9,9 +9,8 @@ from __future__ import annotations
 
 import json
 import logging
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
-from src.collectors.base import ContentItem
 from src.generator.prompts.researcher_prompt import RESEARCHER_SYSTEM, RESEARCHER_PROMPT
 from src.utils.llm import BaseLLM
 

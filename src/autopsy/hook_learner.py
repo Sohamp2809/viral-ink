@@ -17,7 +17,7 @@ import yaml
 from sqlalchemy import select
 
 from src.utils.config import CONFIG_DIR
-from src.utils.db import get_session, GeneratedPost, Base
+from src.utils.db import get_session, Base
 from sqlalchemy import String, Integer, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -165,8 +165,6 @@ async def update_persona_hook_preferences(
     if len(preferences) < 2:
         logger.info("Not enough hook selection data to update preferences")
         return None
-
-    total_selections = sum(1 for _ in preferences.values())
 
     # We need the actual selection count, not unique techniques
     from src.utils.db import get_engine

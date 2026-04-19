@@ -14,7 +14,6 @@ from datetime import datetime, timezone
 
 from rich.console import Console
 from rich.panel import Panel
-from rich.table import Table
 
 from src.collectors.base import ContentItem
 from src.collectors.rss_collector import RSSCollector

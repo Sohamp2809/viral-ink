@@ -22,8 +22,7 @@ data/*.db
 data/*.sqlite
 data/pending_autopsies.json
 data/email_preview.html
-data/sample_output.json
-data/sample_posts/
+
 
 # ── User-specific files ────────────────────────────────
 my_posts.txt

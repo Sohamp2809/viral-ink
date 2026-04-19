@@ -67,7 +67,7 @@ async def get_selected_posts(days: int = 7) -> list[dict]:
     async with session:
         result = await session.execute(
             select(GeneratedPost)
-            .where(GeneratedPost.was_selected == True)
+            .where(GeneratedPost.was_selected.is_(True))
             .where(GeneratedPost.created_at >= cutoff)
             .order_by(GeneratedPost.created_at.desc())
         )

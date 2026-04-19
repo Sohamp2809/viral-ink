@@ -5,8 +5,7 @@ Run with: pytest tests/test_phase2.py -v
 
 import json
 import pytest
-from unittest.mock import AsyncMock, MagicMock, patch
-from dataclasses import dataclass
+from unittest.mock import AsyncMock, MagicMock
 
 
 class TestResearcher:

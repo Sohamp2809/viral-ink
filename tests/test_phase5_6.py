@@ -4,7 +4,6 @@ Run with: pytest tests/test_phase5_6.py -v
 """
 
 import pytest
-from datetime import datetime, timezone
 
 
 class TestEmailBuilder:
@@ -64,7 +63,7 @@ class TestEmailBuilder:
     def test_score_color(self):
         from src.delivery.email_builder import _score_color
         assert _score_color(80) == "#059669"  # emerald
-        assert _score_color(65) == "#2563eb"  # blue
+        assert _score_color(65) == "#4f46e5"  # indigo
         assert _score_color(50) == "#d97706"  # amber
         assert _score_color(30) == "#dc2626"  # red
 
@@ -109,7 +108,7 @@ class TestAutopsyReport:
 
 class TestCalibrator:
     def test_load_default_weights(self):
-        from src.autopsy.calibrator import load_weights, DEFAULT_WEIGHTS
+        from src.autopsy.calibrator import load_weights
         weights = load_weights()
         assert sum(weights.values()) == pytest.approx(1.0, abs=0.01)
         assert "hook_strength" in weights

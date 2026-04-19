@@ -1,0 +1,105 @@
+{
+  "pipeline_date": "2026-04-18",
+  "pipeline_duration_seconds": 28.5,
+  "posts_generated": 3,
+  "avg_virality": 74,
+  "trend_radar": {
+    "topics_tracked": 14,
+    "emerging": ["vector database", "agent memory", "open source"],
+    "peaking": ["gemini"]
+  },
+  "posts": [
+    {
+      "rank": 1,
+      "topic": "Cloud Cost Management",
+      "angle": "case_study",
+      "virality_score": 79,
+      "virality_tier": "GOOD",
+      "post_text": "A single unrestricted API key cost one team €54,000 in 13 hours.\n\nNot a breach. Not an attack. A Firebase browser key left without domain restrictions, quietly racking up Gemini API calls from bots scraping their public endpoint.\n\nThe fix took 30 seconds — adding a domain allowlist. The bill took months to resolve.\n\nThis is the part of cloud architecture nobody talks about: the cost of defaults. Every managed service ships with permissive defaults because restrictive ones generate support tickets. But permissive defaults at scale are financial time bombs.\n\nThree things I now check on every project:\n1. API key restrictions (domain, IP, or app-level)\n2. Budget alerts at 50%, 80%, and 100% of expected spend\n3. Kill switches — automated spend caps that shut down endpoints\n\nThe best security practice is also the best cost practice.\n\n#CloudSecurity #DevOps",
+      "hook_variants": [
+        {
+          "label": "A (original)",
+          "text": "A single unrestricted API key cost one team €54,000 in 13 hours.",
+          "technique": "statistic"
+        },
+        {
+          "label": "B",
+          "text": "Your cloud bill has a ticking time bomb in it — and it's probably an API key you forgot about.",
+          "technique": "bold_statement"
+        },
+        {
+          "label": "C",
+          "text": "I used to think cloud cost overruns were a big-company problem. Then I saw a €54K bill from a weekend project.",
+          "technique": "personal_story"
+        }
+      ],
+      "score_breakdown": {
+        "hook_strength": 88,
+        "format_structure": 86,
+        "engagement_driver": 62,
+        "critic_quality": 75,
+        "topic_timeliness": 80
+      },
+      "critic_scores": {
+        "hook_strength": 8,
+        "voice_match": 8,
+        "substance": 8,
+        "structure": 7,
+        "engagement_driver": 6,
+        "originality": 7,
+        "factual_integrity": 10
+      },
+      "critic_verdict": "PUBLISH",
+      "revision_count": 0,
+      "source_title": "€54k spike in 13h from unrestricted Firebase browser key",
+      "trend_phase": "EMERGING",
+      "char_count": 917
+    },
+    {
+      "rank": 2,
+      "topic": "AI Agent Memory",
+      "angle": "tutorial",
+      "virality_score": 72,
+      "virality_tier": "GOOD",
+      "post_text": "Vector databases are the most over-engineered part of most AI agent stacks.\n\nFor 90% of use cases — chatbots, personal assistants, small-scale RAG — you don't need Pinecone, Weaviate, or Chroma. You need SQLite and a clear schema.\n\nmemweave just proved this. It's an open-source agent memory system that uses Markdown files + SQLite. No vector database. No embedding pipeline. No infrastructure to maintain.\n\nThe results: faster queries, simpler debugging, and zero cold-start latency.\n\nWe've collectively confused 'sophisticated' with 'effective.' A hash map lookup on structured metadata is often faster AND more accurate than approximate nearest neighbor search on 1536-dimensional embeddings.\n\nNot every nail needs the vector-shaped hammer.\n\n#AI #OpenSource",
+      "hook_variants": [
+        {
+          "label": "A (original)",
+          "text": "Vector databases are the most over-engineered part of most AI agent stacks.",
+          "technique": "contrarian"
+        },
+        {
+          "label": "B",
+          "text": "What if I told you the fastest AI agent memory system uses zero vectors and zero embeddings?",
+          "technique": "question"
+        },
+        {
+          "label": "C",
+          "text": "I ripped out our vector database last month. Query speed doubled.",
+          "technique": "personal_story"
+        }
+      ],
+      "score_breakdown": {
+        "hook_strength": 82,
+        "format_structure": 80,
+        "engagement_driver": 56,
+        "critic_quality": 70,
+        "topic_timeliness": 65
+      },
+      "critic_scores": {
+        "hook_strength": 7,
+        "voice_match": 8,
+        "substance": 8,
+        "structure": 7,
+        "engagement_driver": 6,
+        "originality": 7,
+        "factual_integrity": 9
+      },
+      "critic_verdict": "REVISE",
+      "revision_count": 1,
+      "source_title": "memweave: Zero-Infra AI Agent Memory",
+      "trend_phase": "EMERGING",
+      "char_count": 892
+    }
+  ]
+}

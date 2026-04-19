@@ -1,7 +1,6 @@
 """GitHub trending scraper (no API key needed)."""
 from __future__ import annotations
 
-from datetime import datetime, timezone
 
 import httpx
 from bs4 import BeautifulSoup
@@ -59,10 +58,6 @@ class GitHubCollector(BaseCollector):
                         title = path.replace("/", " / ")
                         desc_el = repo_el.find("p")
                         summary = (desc_el.get_text(strip=True) if desc_el else "")[:300]
-
-                        # Stars today
-                        stars_el = repo_el.select_one("span.d-inline-block.float-sm-right")
-                        stars_text = stars_el.get_text(strip=True) if stars_el else ""
 
                         items.append(ContentItem(
                             id=make_id(repo_url),

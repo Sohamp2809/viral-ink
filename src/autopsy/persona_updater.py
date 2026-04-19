@@ -97,7 +97,6 @@ async def update_persona_from_autopsies(
 
     # ── Compute engagement patterns ─────────────
     high_performers = [r for r in reports if r.actual_score > 70]
-    low_performers = [r for r in reports if r.actual_score < 40]
 
     if high_performers:
         # What do high performers have in common?

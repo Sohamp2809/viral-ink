@@ -28,8 +28,6 @@ async def _scheduled_run():
 
         if posts:
             # Send email
-            from src.collectors.trend_radar import compute_trends
-            from src.main import collect_content
             # Trends were already computed in the pipeline,
             # but we pass empty list since email_builder handles it gracefully
             await send_daily_email(posts, [])

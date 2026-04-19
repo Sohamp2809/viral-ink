@@ -97,10 +97,10 @@ def schedule(
     """Start the daily scheduler. Runs pipeline + checks autopsies automatically."""
     _setup_logging("DEBUG" if verbose else "INFO")
 
-    console.print(f"\n[bold]Starting daily scheduler[/bold]")
+    console.print("\n[bold]Starting daily scheduler[/bold]")
     console.print(f"  Pipeline: {hour:02d}:{minute:02d} {tz}")
-    console.print(f"  Autopsy reminders: checked at each run")
-    console.print(f"  Press Ctrl+C to stop\n")
+    console.print("  Autopsy reminders: checked at each run")
+    console.print("  Press Ctrl+C to stop\n")
 
     from src.delivery.scheduler import start_scheduler
     start_scheduler(hour=hour, minute=minute, timezone_str=tz)
@@ -118,7 +118,7 @@ def collect(verbose: bool = typer.Option(False, "--verbose", "-v")):
     async def _collect():
         items = await collect_content()
         ranked = rank_content(items)
-        console.print(f"\n[bold]Top 10 items:[/bold]\n")
+        console.print("\n[bold]Top 10 items:[/bold]\n")
         for i, item in enumerate(ranked[:10], 1):
             age = f"{item.age_hours:.0f}h ago" if item.age_hours < 48 else f"{item.age_hours/24:.0f}d ago"
             console.print(f"  {i:2}. [{item.source_name}] {item.title}")
@@ -178,7 +178,7 @@ def onboard(
     console.print(f"  Assertiveness: {tone.get('assertiveness', 0.5):.1f}/1.0")
     console.print(f"  Vulnerability: {tone.get('vulnerability', 0.5):.1f}/1.0")
     console.print(f"  Humor:         {tone.get('humor_frequency', 0.3):.1f}/1.0")
-    console.print(f"\nRun [bold]pilot calibrate[/bold] to test the voice match.\n")
+    console.print("\nRun [bold]pilot calibrate[/bold] to test the voice match.\n")
 
 
 # ── Calibrate ───────────────────────────────────────────
@@ -315,7 +315,7 @@ def autopsy(
     console.print(f"  [red]✗ What didn't:[/red]  {result.what_didnt}")
     console.print(f"  [cyan]→ Lesson:[/cyan]       {result.lesson}")
     console.print()
-    console.print(f"[dim]Run `pilot learn` to feed this into the scoring model and persona.[/dim]\n")
+    console.print("[dim]Run `pilot learn` to feed this into the scoring model and persona.[/dim]\n")
 
 
 # ── Learn (Full Feedback Loop) ──────────────────────────
@@ -337,12 +337,12 @@ def learn(
         from src.autopsy.calibrator import recalibrate
         new_weights = await recalibrate()
         if new_weights:
-            console.print(f"  [green]✓ Weights updated[/green]")
+            console.print("  [green]✓ Weights updated[/green]")
             for signal, weight in new_weights.items():
                 console.print(f"    {signal}: {weight:.0%}")
             steps_done += 1
         else:
-            console.print(f"  [yellow]Not enough data yet[/yellow]")
+            console.print("  [yellow]Not enough data yet[/yellow]")
 
         # Step 2: Update persona DNA
         console.print("[bold]Step 2:[/bold] Updating Persona DNA...")
@@ -352,14 +352,14 @@ def learn(
             prefs = updated_persona.get("learned_preferences", {})
             strong = prefs.get("strong_angles", [])
             weak = prefs.get("weak_angles", [])
-            console.print(f"  [green]✓ Persona updated[/green]")
+            console.print("  [green]✓ Persona updated[/green]")
             if strong:
                 console.print(f"    Strong angles: {', '.join(strong)}")
             if weak:
                 console.print(f"    Weak angles: {', '.join(weak)}")
             steps_done += 1
         else:
-            console.print(f"  [yellow]Not enough data yet[/yellow]")
+            console.print("  [yellow]Not enough data yet[/yellow]")
 
         # Step 3: Update content memory
         console.print("[bold]Step 3:[/bold] Updating content memory...")
@@ -369,19 +369,19 @@ def learn(
             console.print(f"  [green]✓ {nodes_updated} memory nodes updated[/green]")
             steps_done += 1
         else:
-            console.print(f"  [yellow]No memory updates needed[/yellow]")
+            console.print("  [yellow]No memory updates needed[/yellow]")
 
         # Step 4: Update hook preferences
         console.print("[bold]Step 4:[/bold] Learning hook preferences...")
         from src.autopsy.hook_learner import update_persona_hook_preferences
         hook_prefs = await update_persona_hook_preferences(days=days)
         if hook_prefs:
-            console.print(f"  [green]✓ Hook preferences updated[/green]")
+            console.print("  [green]✓ Hook preferences updated[/green]")
             for technique, score in list(hook_prefs.items())[:3]:
                 console.print(f"    {technique}: {score:.0%}")
             steps_done += 1
         else:
-            console.print(f"  [yellow]Not enough hook selection data yet[/yellow]")
+            console.print("  [yellow]Not enough hook selection data yet[/yellow]")
 
         # Step 5: Clean up old autopsy queue entries
         from src.autopsy.scheduler import cleanup_old_entries
@@ -392,10 +392,10 @@ def learn(
         if steps_done > 0:
             console.print(f"\n[bold green]Feedback loop complete — {steps_done}/4 systems updated[/bold green]\n")
         else:
-            console.print(f"\n[yellow]No updates made. Need more data:[/yellow]")
-            console.print(f"  1. Publish posts and run `pilot select <id>`")
-            console.print(f"  2. After 48h, run `pilot autopsy <id> -r <reactions> -c <comments>`")
-            console.print(f"  3. Repeat for 5+ posts, then run `pilot learn` again\n")
+            console.print("\n[yellow]No updates made. Need more data:[/yellow]")
+            console.print("  1. Publish posts and run `pilot select <id>`")
+            console.print("  2. After 48h, run `pilot autopsy <id> -r <reactions> -c <comments>`")
+            console.print("  3. Repeat for 5+ posts, then run `pilot learn` again\n")
 
     asyncio.run(_learn())
 
@@ -430,7 +430,7 @@ def analyze(
         console.print(f"  Worst angle:         [red]{report.worst_angle}[/red]")
 
     if report.patterns:
-        console.print(f"\n[bold]Detected Patterns[/bold]\n")
+        console.print("\n[bold]Detected Patterns[/bold]\n")
         for p in report.patterns:
             confidence_bar = "●" * int(p.confidence * 5) + "○" * (5 - int(p.confidence * 5))
             console.print(Panel(
@@ -441,7 +441,7 @@ def analyze(
             ))
 
     if report.recommendations:
-        console.print(f"\n[bold]Top Recommendations[/bold]")
+        console.print("\n[bold]Top Recommendations[/bold]")
         for r in report.recommendations:
             if r:
                 console.print(f"  → {r}")
@@ -466,7 +466,7 @@ def digest(
         from src.autopsy.calibrator import recalibrate as do_recalibrate
         result = asyncio.run(do_recalibrate())
         if result:
-            console.print(f"\n[green]Scoring weights recalibrated:[/green]")
+            console.print("\n[green]Scoring weights recalibrated:[/green]")
             for signal, weight in result.items():
                 console.print(f"  {signal}: {weight:.0%}")
         else:

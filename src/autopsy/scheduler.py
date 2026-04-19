@@ -12,11 +12,9 @@ Also handles the weekly digest schedule.
 
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
 from datetime import datetime, timezone, timedelta
-from pathlib import Path
 
 from src.utils.config import DATA_DIR
 
@@ -195,11 +193,6 @@ async def check_due_autopsies(auto_notify: bool = True) -> list[dict]:
 
         console.print(f"\n[bold yellow]📋 {len(due)} autopsy reminder(s)[/bold yellow]")
         for entry in due:
-            hours_ago = (
-                datetime.now(timezone.utc) -
-                datetime.fromisoformat(entry["trigger_at"]).replace(tzinfo=timezone.utc)
-            ).total_seconds() / 3600
-
             console.print(
                 f"  Post {entry['post_id']}: [bold]{entry.get('topic', 'Unknown')}[/bold] "
                 f"— published {entry['delay_hours']}h+ ago"

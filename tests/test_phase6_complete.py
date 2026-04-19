@@ -3,11 +3,8 @@ Phase 6 completion tests — hook learner + autopsy scheduler.
 Run with: pytest tests/test_phase6_complete.py -v
 """
 
-import json
 import pytest
 from datetime import datetime, timezone, timedelta
-from pathlib import Path
-from unittest.mock import patch
 
 
 class TestHookLearner:

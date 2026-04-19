@@ -11,13 +11,12 @@ from __future__ import annotations
 import logging
 import re
 from collections import Counter
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 
 from src.collectors.base import ContentItem
 from src.collectors.trend_radar.momentum import TrendScore, compute_momentum
 from src.collectors.trend_radar.snapshots import (
     save_snapshot,
-    get_snapshots,
     TopicSnapshot,
 )
 

@@ -44,9 +44,9 @@ def build_voice_rules(persona: dict | None = None) -> str:
 
     assertiveness = tone.get("assertiveness", 0.5)
     if assertiveness > 0.6:
-        rules.append(f"- You state opinions confidently and directly. You don't hedge with 'maybe' or 'perhaps'.")
+        rules.append("- You state opinions confidently and directly. You don't hedge with 'maybe' or 'perhaps'.")
     elif assertiveness < 0.4:
-        rules.append(f"- You present ideas as explorations, not declarations. You invite disagreement.")
+        rules.append("- You present ideas as explorations, not declarations. You invite disagreement.")
 
     vulnerability = tone.get("vulnerability", 0.5)
     if vulnerability > 0.5:

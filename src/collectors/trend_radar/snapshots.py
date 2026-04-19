@@ -13,7 +13,7 @@ from datetime import datetime, timezone, timedelta
 from sqlalchemy import select, delete
 
 from src.utils.db import get_session, Base
-from sqlalchemy import String, Integer, Float, DateTime
+from sqlalchemy import String, Integer, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
 logger = logging.getLogger(__name__)

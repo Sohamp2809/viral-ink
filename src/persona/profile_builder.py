@@ -5,7 +5,6 @@ Profile Builder — creates and updates the persona_dna.yaml from analysis resul
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 
 import yaml
 

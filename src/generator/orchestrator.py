@@ -14,8 +14,8 @@ from dataclasses import dataclass, field
 
 from src.collectors.base import ContentItem
 from src.generator.agents.researcher import ContentBrief, research
-from src.generator.agents.writer import Draft, write, revise
-from src.generator.agents.critic import Critique, critique
+from src.generator.agents.writer import write, revise
+from src.generator.agents.critic import critique
 from src.generator.prompts.system import CONTEXT_TEMPLATE
 from src.hooks import generate_hook_variants, HookVariant
 from src.scorer import score_post, ViralityScore

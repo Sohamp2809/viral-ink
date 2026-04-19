@@ -9,7 +9,6 @@ best predict actual engagement and rebalances weights accordingly.
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 
 import yaml
 from sqlalchemy import select

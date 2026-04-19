@@ -3,9 +3,6 @@ Phase 3 tests — trend prediction radar.
 Run with: pytest tests/test_phase3.py -v
 """
 
-import pytest
-from datetime import datetime, timezone
-from collections import Counter
 
 
 class TestMomentum:

@@ -3,7 +3,6 @@ Phase 4 tests — A/B hook variants + virality scoring.
 Run with: pytest tests/test_phase4.py -v
 """
 
-import pytest
 
 
 class TestHookClassifier:

@@ -108,28 +108,28 @@ def format_digest_text(digest: dict) -> str:
         f"{'═' * 50}",
         f"WEEKLY DIGEST — Last {digest['period_days']} days",
         f"{'═' * 50}",
-        f"",
+        "",
         f"Posts: {digest['total_generated']} generated · {digest['total_selected']} selected ({digest['selection_rate']:.0%} use rate)",
         f"Autopsied: {digest['total_autopsied']} posts",
-        f"",
+        "",
         f"Avg predicted: {digest['avg_predicted_score']}%",
         f"Avg actual:    {digest['avg_actual_score']}%",
         f"Prediction accuracy: {digest['prediction_accuracy']}%",
-        f"",
+        "",
     ]
 
     if digest["best_post"]["topic"]:
         lines.extend([
             f"📈 BEST: {digest['best_post']['topic']} ({digest['best_post']['actual_score']:.0f}%, {digest['best_post']['reactions']} reactions)",
             f"   {digest['best_post']['what_worked'][:100]}",
-            f"",
+            "",
         ])
 
     if digest["worst_post"]["topic"]:
         lines.extend([
             f"📉 WORST: {digest['worst_post']['topic']} ({digest['worst_post']['actual_score']:.0f}%)",
             f"   {digest['worst_post']['what_didnt'][:100]}",
-            f"",
+            "",
         ])
 
     if digest["angle_performance"]:
