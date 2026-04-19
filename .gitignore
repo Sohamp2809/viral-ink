@@ -1,0 +1,69 @@
+# ── Secrets & environment ──────────────────────────────
+.env
+config/persona_dna.yaml
+
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Database & generated data ──────────────────────────
+data/*.db
+data/*.sqlite
+data/pending_autopsies.json
+data/email_preview.html
+data/sample_output.json
+data/sample_posts/
+
+# ── User-specific files ────────────────────────────────
+my_posts.txt
+
+# ── Tool caches ────────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Logs ───────────────────────────────────────────────
+*.log
+
+# ── OS ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── v0.2 stubs (not yet implemented — coming next release) ──
+src/collectors/linkedin_collector.py
+src/collectors/trend_radar/google_trends.py
+src/collectors/trend_radar/hn_velocity.py
+src/collectors/trend_radar/social_tracker.py
+src/context/assembler.py
+src/context/deduplicator.py
+src/context/ranker.py
+src/context/summarizer.py
+src/context/memory/angle_tracker.py
+src/context/memory/filter.py
+src/context/memory/graph.py
+src/context/memory/migrations.py
+src/context/memory/node.py
+src/delivery/quality_gate.py
+src/generator/models.py
+src/hooks/preference_tracker.py
+src/persona/updater.py
+src/scorer/memory_scorer.py
+src/scorer/reference_scorer.py
+src/scorer/trend_scorer.py
+tests/test_scorer.py
+tests/test_trend_radar.py

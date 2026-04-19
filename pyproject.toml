@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "linkedin-post-pilot"
+version = "0.1.0"
+description = "AI Agent that generates high-quality LinkedIn posts from trending tech content"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+
+dependencies = [
+    "anthropic>=0.40.0",
+    "openai>=1.50.0",
+    "httpx>=0.27.0",
+    "feedparser>=6.0.11",
+    "beautifulsoup4>=4.12.0",
+    "aiohttp>=3.10.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "numpy>=1.26.0",
+    "sqlalchemy>=2.0.0",
+    "aiosqlite>=0.20.0",
+    "pyyaml>=6.0.2",
+    "typer>=0.12.0",
+    "rich>=13.9.0",
+    "python-dotenv>=1.0.1",
+    "apscheduler>=3.10.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.0", "pytest-asyncio>=0.24.0", "ruff>=0.7.0"]
+
+[project.scripts]
+pilot = "src.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

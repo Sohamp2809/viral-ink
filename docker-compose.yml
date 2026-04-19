@@ -1,0 +1,9 @@
+services:
+  pilot:
+    build: .
+    env_file: .env
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+    # Run pipeline once — for cron scheduling, use host cron or add schedule service
+    command: ["run"]

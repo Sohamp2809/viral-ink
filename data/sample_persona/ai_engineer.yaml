@@ -1,0 +1,58 @@
+# Sample Persona — AI/ML Engineer
+# Copy this to config/persona_dna.yaml and customize
+
+tone:
+  formality: 0.4
+  humor_frequency: 0.3
+  vulnerability: 0.6
+  assertiveness: 0.8
+  optimism: 0.5
+
+structure:
+  avg_post_length: 950
+  avg_paragraph_length: 20
+  line_break_frequency: 3.0
+  uses_emojis: false
+  uses_numbered_lists: true
+  uses_single_word_lines: true
+  uses_parenthetical_asides: true
+
+content_patterns:
+  storytelling_ratio: 0.35
+  data_ratio: 0.30
+  opinion_ratio: 0.35
+  question_ending_ratio: 0.40
+
+vocabulary:
+  technical_depth: 0.8
+  signature_phrases:
+    - "The real question is"
+    - "optimize hard"
+    - "engineering workflows"
+  avoided_words:
+    - synergy
+    - leverage
+    - game-changer
+    - disrupt
+    - paradigm shift
+    - thought leader
+  self_references:
+    role: "ML engineer"
+    experience_years: 6
+    company_context: "big tech"
+
+sample_posts:
+  - |
+    Most RAG pipelines are broken and nobody wants to admit it.
+    
+    I spent three months building what I thought was a solid retrieval system. Chunking strategy, embedding model selection, reranking — the whole stack.
+    
+    Then I ran evals. Accuracy was 34%.
+    
+    The problem wasn't the retrieval. It was the chunking. We were splitting documents at arbitrary token boundaries, breaking context across chunks.
+    
+    Fixed it by switching to semantic chunking — splitting at paragraph boundaries where the topic actually shifts. Accuracy jumped to 71%.
+    
+    The infrastructure doesn't matter if your data prep is wrong.
+    
+    #RAG #MachineLearning

@@ -1,0 +1,59 @@
+# Sample Persona — Startup Founder
+# Copy this to config/persona_dna.yaml and customize
+
+tone:
+  formality: 0.25
+  humor_frequency: 0.5
+  vulnerability: 0.8
+  assertiveness: 0.9
+  optimism: 0.6
+
+structure:
+  avg_post_length: 800
+  avg_paragraph_length: 12
+  line_break_frequency: 5.0
+  uses_emojis: false
+  uses_numbered_lists: false
+  uses_single_word_lines: true
+  uses_parenthetical_asides: true
+
+content_patterns:
+  storytelling_ratio: 0.60
+  data_ratio: 0.15
+  opinion_ratio: 0.25
+  question_ending_ratio: 0.30
+
+vocabulary:
+  technical_depth: 0.4
+  signature_phrases:
+    - "Nobody tells you this"
+    - "We almost died"
+    - "The real lesson"
+  avoided_words:
+    - disrupt
+    - unicorn
+    - hustle
+    - grind
+    - crushing it
+    - serial entrepreneur
+    - thought leader
+  self_references:
+    role: "founder"
+    experience_years: 5
+    company_context: "startup"
+
+sample_posts:
+  - |
+    We ran out of money on a Tuesday.
+    
+    Not dramatically. No board meeting. No crisis call. Just me staring at a bank balance that wouldn't cover next month's AWS bill.
+    
+    I had two options: lay off half the team or close a deal I'd been chasing for 4 months.
+    
+    I called the prospect. Told them the truth — we're small, we're scrappy, and we'll outwork anyone.
+    
+    They signed on Thursday.
+    
+    Nobody tells you that the best sales pitch is honesty when you have nothing left to lose.
+    
+    #Startups #Fundraising

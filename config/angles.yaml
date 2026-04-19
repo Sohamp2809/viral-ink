@@ -1,0 +1,38 @@
+angles:
+  hot_take:
+    description: "Contrarian opinion challenging conventional wisdom"
+    energy: high
+  tutorial:
+    description: "Teach a specific skill or technique"
+    energy: medium
+  story:
+    description: "Personal experience narrative with a lesson"
+    energy: high
+  prediction:
+    description: "Forward-looking take on where a trend is headed"
+    energy: medium
+  comparison:
+    description: "X vs Y analysis with a clear verdict"
+    energy: medium
+  myth_busting:
+    description: "Debunk a popular misconception with evidence"
+    energy: high
+  case_study:
+    description: "What a specific company did and what we can learn"
+    energy: medium
+  framework:
+    description: "A structured mental model for a problem"
+    energy: medium
+  data_driven:
+    description: "Analysis backed by specific numbers"
+    energy: medium
+  question:
+    description: "Provocative question to spark discussion"
+    energy: low
+
+diversity:
+  min_angles_per_batch: 5
+  max_same_angle_per_batch: 2
+  required_per_batch:
+    - hot_take
+    - story
