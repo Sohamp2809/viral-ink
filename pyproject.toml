@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "linkedin-post-pilot"
+name = "viral-ink"
 version = "0.1.0"
-description = "AI Agent that generates high-quality LinkedIn posts from trending tech content"
+description = "Self-improving AI agent that writes LinkedIn posts in your voice and gets smarter from your results"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"

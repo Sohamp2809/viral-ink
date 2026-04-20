@@ -1,12 +1,12 @@
-# Contributing to LinkedIn Post Pilot
+# Contributing to Viral Ink
  
 Thanks for your interest in contributing! Here's how to get started.
  
 ## Setup
  
 ```bash
-git clone https://github.com/yourname/linkedin-post-pilot.git
-cd linkedin-post-pilot
+git clone https://github.com/Sohamp2809/viral-ink.git
+cd viral-ink
 cp .env.example .env  # add your API keys
 pip install -e ".[dev]"
 pytest tests/ -v
